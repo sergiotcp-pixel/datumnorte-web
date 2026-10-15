@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datum Norte | Consultoría en datos, automatización e inteligencia artificial</title>
+<meta name="description" content="Datum Norte es una firma de consultoría en ciencia de datos, automatización de procesos e inteligencia artificial para empresas e instituciones en México.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0B1F3A;
+    --ink-2: #13294B;
+    --text: #22303F;
+    --muted: #5E6B7A;
+    --line: #DCE1E7;
+    --paper: #FAFAF7;
+    --white: #FFFFFF;
+    --accent: #A9824E;
+    --accent-soft: #EFE7DA;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 500; color: var(--ink); line-height: 1.15; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+  .kicker { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+
+  /* Barra superior */
+  .topbar { background: var(--ink); color: #AEBACB; font-size: 0.78rem; letter-spacing: 0.04em; }
+  .topbar .wrap { display: flex; justify-content: space-between; height: 36px; align-items: center; }
+
+  /* Navegación */
+  header { position: sticky; top: 0; z-index: 20; background: var(--white); border-bottom: 1px solid var(--line); }
+  nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand svg { width: 30px; height: 30px; }
+  .brand-name { font-family: 'Source Serif 4', serif; font-size: 1.45rem; font-weight: 600; color: var(--ink); letter-spacing: 0.01em; }
+  .brand-name span { font-weight: 400; }
+  .menu { display: flex; gap: 34px; }
+  .menu a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); padding: 6px 0; border-bottom: 1px solid transparent; transition: border-color .2s, color .2s; }
+  .menu a:hover { color: var(--ink); border-color: var(--accent); }
+  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background .2s, color .2s; }
+  .btn-dark { background: var(--ink); color: var(--white); }
+  .btn-dark:hover { background: var(--accent); }
+  .btn-line { border: 1px solid var(--ink); color: var(--ink); }
+  .btn-line:hover { background: var(--ink); color: var(--white); }
+  .btn-light { background: var(--white); color: var(--ink); }
+  .btn-light:hover { background: var(--accent); color: var(--white); }
+  .arrow { transition: transform .2s; }
+  .btn:hover .arrow { transform: translateX(4px); }
+
+  /* Hero */
+  .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
+  .hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 72px; padding-top: 104px; padding-bottom: 104px; align-items: end; }
+  .hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); margin: 22px 0 0; }
+  .hero h1 em { font-style: italic; color: var(--accent); }
+  .hero-side { border-left: 1px solid var(--line); padding-left: 36px; }
+  .hero-side p { font-size: 1.08rem; color: var(--muted); margin-bottom: 30px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+  /* Principios */
+  .principles { border-bottom: 1px solid var(--line); }
+  .principles .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .principle { padding: 44px 36px 44px 0; }
+  .principle + .principle { border-left: 1px solid var(--line); padding-left: 36px; }
+  .principle h3 { font-size: 1.3rem; margin-bottom: 8px; }
+  .principle p { color: var(--muted); font-size: 0.97rem; }
+
+  /* Secciones */
+  section { padding: 112px 0; }
+  .head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; margin-bottom: 64px; align-items: end; }
+  .head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top: 16px; }
+  .head p { color: var(--muted); font-size: 1.08rem; }
+
+  /* Capacidades */
+  .capabilities { border-top: 1px solid var(--ink); }
+  .cap { display: grid; grid-template-columns: 90px 1fr 1.4fr; gap: 40px; padding: 38px 0; border-bottom: 1px solid var(--line); transition: background .25s; }
+  .cap:hover { background: var(--paper); }
+  .cap .num { font-family: 'Source Serif 4', serif; font-size: 1.1rem; color: var(--accent); padding-left: 8px; }
+  .cap h3 { font-size: 1.55rem; }
+  .cap p { color: var(--muted); }
+
+  /* Enfoque */
+  .approach { background: var(--ink); color: #C3CDDA; }
+  .approach .head h2 { color: var(--white); }
+  .approach .head p { color: #AEBACB; }
+  .phases { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.2); }
+  .phase { padding: 40px 36px 8px 0; position: relative; }
+  .phase + .phase { padding-left: 36px; border-left: 1px solid rgba(255,255,255,0.12); }
+  .phase::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; }
+  .phase + .phase::before { left: 36px; }
+  .phase .label { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  .phase h3 { color: var(--white); font-size: 1.5rem; margin: 10px 0 12px; }
+  .phase p { font-size: 0.98rem; }
+
+  /* Industrias */
+  .industries { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+  .industry { padding: 34px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s; }
+  .industry:hover { background: var(--paper); }
+  .industry h3 { font-size: 1.3rem; margin-bottom: 10px; }
+  .industry p { color: var(--muted); font-size: 0.95rem; }
+
+  /* Presencia */
+  .presence { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .cities { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+  .city { padding: 30px 24px 0 0; }
+  .city h3 { font-size: 1.45rem; }
+  .city span { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+
+  /* CTA */
+  .cta { background: var(--ink-2); color: var(--white); padding: 96px 0; }
+  .cta .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: center; }
+  .cta h2 { color: var(--white); font-size: clamp(2rem, 3.8vw, 3rem); }
+  .cta p { color: #AEBACB; margin: 18px 0 0; font-size: 1.05rem; }
+  .cta-box { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 40px; }
+  .cta-box .mail { display: block; font-family: 'Source Serif 4', serif; font-size: 1.35rem; margin: 10px 0 26px; color: var(--white); }
+
+  /* Pie */
+  footer { background: var(--ink); color: #8E9BAD; padding: 64px 0 32px; font-size: 0.9rem; }
+  .foot { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  .foot .brand-name { color: var(--white); }
+  .foot p { margin-top: 14px; max-width: 320px; }
+  .foot h4 { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; font-weight: 600; }
+  .foot li { list-style: none; margin-bottom: 8px; }
+  .foot a:hover { color: var(--white); }
+  .legal { padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; }
+
+  @media (max-width: 900px) {
+    .menu, .topbar { display: none; }
+    .hero .wrap, .head, .cta .wrap, .foot { grid-template-columns: 1fr; gap: 36px; }
+    .hero .wrap { padding-top: 72px; padding-bottom: 72px; }
+    .hero-side, .cta-box { border-left: none; padding-left: 0; }
+    .principles .wrap, .phases, .industries { grid-template-columns: 1fr; }
+    .principle, .principle + .principle { padding: 30px 0; border-left: none; border-top: 1px solid var(--line); }
+    .phase, .phase + .phase { padding: 32px 0 8px; border-left: none; }
+    .phase + .phase::before { left: 0; }
+    .cap { grid-template-columns: 1fr; gap: 10px; }
+    .cap .num { padding-left: 0; }
+    .cities { grid-template-columns: 1fr 1fr; gap: 0 20px; }
+    .city { padding-bottom: 24px; }
+    section { padding: 80px 0; }
+    .nav-cta { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Consultoría en datos, automatización e inteligencia artificial</span>
+    <span>Ciudad de México · Monterrey · Guadalajara · Chihuahua</span>
+  </div>
+</div>
+
+<header>
+  <nav class="wrap">
+    <a href="#" class="brand" aria-label="Datum Norte">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <rect x="1" y="1" width="30" height="30" fill="none" stroke="#0B1F3A" stroke-width="2"/>
+        <path d="M16 6 L22 24 L16 20 L10 24 Z" fill="#A9824E"/>
+      </svg>
+      <span class="brand-name">Datum <span>Norte</span></span>
+    </a>
+    <div class="menu">
+      <a href="#capacidades">Capacidades</a>
+      <a href="#enfoque">Enfoque</a>
+      <a href="#industrias">Industrias</a>
+      <a href="#presencia">Presencia</a>
+    </div>
+    <a href="#contacto" class="btn btn-dark nav-cta">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Firma de consultoría tecnológica</span>
+      <h1>Decisiones más claras. Operaciones más <em>inteligentes.</em></h1>
+    </div>
+    <div class="hero-side">
+      <p>Acompañamos a empresas e instituciones en la transformación de sus datos y procesos: desde el diagnóstico hasta la operación continua de soluciones de automatización e inteligencia artificial.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn btn-dark">Solicitar diagnóstico <span class="arrow">→</span></a>
+        <a href="#capacidades" class="btn btn-line">Capacidades</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="principles">
+  <div class="wrap">
+    <div class="principle">
+      <h3>Rigor analítico</h3>
+      <p>Cada recomendación parte de evidencia y de los datos reales de su operación.</p>
+    </div>
+    <div class="principle">
+      <h3>Ejecución medible</h3>
+      <p>Implementamos soluciones con objetivos e indicadores definidos desde el inicio.</p>
+    </div>
+    <div class="principle">
+      <h3>Relación de largo plazo</h3>
+      <p>Permanecemos a su lado para operar, medir y mejorar cada solución.</p>
+    </div>
+  </div>
+</div>
+
+<section id="capacidades">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Capacidades</span>
+        <h2>Lo que hacemos por nuestros clientes</h2>
+      </div>
+      <p>Integramos estrategia, analítica y tecnología para resolver problemas concretos de negocio, con soluciones que se adaptan a la forma en que ya opera su organización.</p>
+    </div>
+    <div class="capabilities">
+      <div class="cap">
+        <span class="num">01</span>
+        <h3>Analítica y ciencia de datos</h3>
+        <p>Modelos, indicadores y tableros ejecutivos que integran sus fuentes de información y convierten los datos en decisiones oportunas.</p>
+      </div>
+      <div class="cap">
+        <span class="num">02</span>
+        <h3>Automatización de procesos</h3>
+        <p>Rediseño y automatización de flujos operativos y administrativos para reducir errores, tiempos de respuesta y costos.</p>
+      </div>
+      <div class="cap">
+        <span class="num">03</span>
+        <h3>Inteligencia artificial aplicada</h3>
+        <p>Asistentes inteligentes, clasificación documental y análisis automatizado, integrados de forma segura a sus herramientas de trabajo.</p>
+      </div>
+      <div class="cap">
+        <span class="num">04</span>
+        <h3>Plataformas digitales</h3>
+        <p>Sitios y portales corporativos conectados a sus procesos, diseñados para generar confianza y resultados.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="enfoque" class="approach">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Nuestro enfoque</span>
+        <h2>Del diagnóstico a la operación continua</h2>
+      </div>
+      <p>No entregamos un proyecto y nos retiramos. Nos integramos como el área de datos y tecnología de su organización, con un modelo de acompañamiento mensual.</p>
+    </div>
+    <div class="phases">
+      <div class="phase">
+        <span class="label">Fase 1</span>
+        <h3>Diagnóstico</h3>
+        <p>Evaluamos procesos, sistemas y datos para identificar las oportunidades de mayor impacto.</p>
+      </div>
+      <div class="phase">
+        <span class="label">Fase 2</span>
+        <h3>Implementación</h3>
+        <p>Diseñamos e integramos las soluciones con entregas por etapas y resultados verificables.</p>
+      </div>
+      <div class="phase">
+        <span class="label">Fase 3</span>
+        <h3>Acompañamiento</h3>
+        <p>Soporte, monitoreo, reportes y mejora continua para que cada solución evolucione con su negocio.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="industrias">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Industrias</span>
+        <h2>Donde generamos mayor valor</h2>
+      </div>
+      <p>Nos especializamos en sectores con alta carga de trabajo manual, donde la automatización y el uso inteligente de los datos generan resultados visibles en poco tiempo.</p>
+    </div>
+    <div class="industries">
+      <div class="industry">
+        <h3>Servicios jurídicos</h3>
+        <p>Gestión documental, seguimiento de expedientes y control de plazos automatizados.</p>
+      </div>
+      <div class="industry">
+        <h3>Recuperación de cartera</h3>
+        <p>Priorización de cuentas, seguimiento automatizado y analítica de cobranza.</p>
+      </div>
+      <div class="industry">
+        <h3>Sector automotriz</h3>
+        <p>Indicadores comerciales, cálculo de comisiones y tableros de desempeño por agencia.</p>
+      </div>
+      <div class="industry">
+        <h3>Sector inmobiliario</h3>
+        <p>Gestión de prospectos, inventario y reportes comerciales en tiempo real.</p>
+      </div>
+      <div class="industry">
+        <h3>Salud y servicios clínicos</h3>
+        <p>Agenda, expedientes y seguimiento a pacientes con procesos más eficientes.</p>
+      </div>
+      <div class="industry">
+        <h3>Sector público</h3>
+        <p>Modernización de procesos, tableros de gestión y analítica para la toma de decisiones.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="presencia" class="presence">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Presencia</span>
+        <h2>Alcance nacional</h2>
+      </div>
+      <p>Atendemos a empresas e instituciones en todo México, con trabajo remoto y presencial según las necesidades de cada proyecto.</p>
+    </div>
+    <div class="cities">
+      <div class="city"><h3>Ciudad de México</h3><span>Sede</span></div>
+      <div class="city"><h3>Monterrey</h3><span>Nuevo León</span></div>
+      <div class="city"><h3>Guadalajara</h3><span>Jalisco</span></div>
+      <div class="city"><h3>Chihuahua</h3><span>Chihuahua</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta" id="contacto">
+  <div class="wrap">
+    <div>
+      <span class="kicker">Contacto</span>
+      <h2 style="margin-top:16px">Conversemos sobre los retos de su organización</h2>
+      <p>En una primera sesión identificamos qué procesos pueden automatizarse y el impacto estimado para su operación.</p>
+    </div>
+    <div class="cta-box">
+      <span class="kicker">Escríbanos</span>
+      <a class="mail" href="mailto:contacto@datumnorte.com">contacto@datumnorte.com</a>
+      <a href="mailto:contacto@datumnorte.com?subject=Solicitud%20de%20diagn%C3%B3stico" class="btn btn-light">Solicitar diagnóstico <span class="arrow">→</span></a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <span class="brand-name">Datum <span>Norte</span></span>
+        <p>Consultoría en datos, automatización e inteligencia artificial para empresas e instituciones en México.</p>
+      </div>
+      <div>
+        <h4>Firma</h4>
+        <ul>
+          <li><a href="#capacidades">Capacidades</a></li>
+          <li><a href="#enfoque">Enfoque</a></li>
+          <li><a href="#industrias">Industrias</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:contacto@datumnorte.com">contacto@datumnorte.com</a></li>
+          <li>Ciudad de México</li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© 2026 Datum Norte. Todos los derechos reservados.</span>
+      <span>datumnorte.com</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
