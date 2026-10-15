@@ -3,11 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Datum Norte | Consultoría en datos, automatización e inteligencia artificial</title>
-<meta name="description" content="Datum Norte es una firma de consultoría en ciencia de datos, automatización de procesos e inteligencia artificial para empresas e instituciones en México.">
+<title>Datum Norte | Recuperación de cartera, Business Intelligence y Modelos de IA</title>
+<meta name="description" content="Datum Norte: consultoría en recuperación de cartera, business intelligence y modelos de IA. Tres prácticas dirigidas por socios con experiencia operativa en banca, seguros, retail y automotriz.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="canonical" href="https://www.datumnorte.com/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Datum Norte">
+<meta property="og:title" content="Datum Norte | Consultoría en datos, cartera e IA">
+<meta property="og:description" content="Tres prácticas dirigidas por socios que operaron lo que asesoran: recuperación de cartera, business intelligence y modelos de IA.">
+<meta property="og:url" content="https://www.datumnorte.com/">
+<meta property="og:locale" content="es_MX">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1F3A'/%3E%3Cpath d='M16 6 L22 24 L16 20 L10 24 Z' fill='%23A9824E'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0B1F3A;
@@ -18,146 +28,203 @@
     --paper: #FAFAF7;
     --white: #FFFFFF;
     --accent: #A9824E;
-    --accent-soft: #EFE7DA;
+    --accent-light: #C9A774;
+    --p1: #7B2D33;
+    --p2: #14495F;
+    --p3: #4E5B2A;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
   body { font-family: 'Inter', system-ui, sans-serif; color: var(--text); background: var(--white); line-height: 1.65; -webkit-font-smoothing: antialiased; }
-  h1, h2, h3 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 500; color: var(--ink); line-height: 1.15; letter-spacing: -0.01em; }
+  h1, h2, h3, h4 { font-family: 'Source Serif 4', Georgia, serif; font-weight: 500; color: var(--ink); line-height: 1.15; letter-spacing: -0.01em; text-wrap: balance; }
   a { color: inherit; text-decoration: none; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
   .wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
-  .kicker { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .kicker { display: inline-block; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .label { display: block; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+  section { padding: 104px 0; scroll-margin-top: 80px; }
 
   /* Barra superior */
   .topbar { background: var(--ink); color: #AEBACB; font-size: 0.78rem; letter-spacing: 0.04em; }
-  .topbar .wrap { display: flex; justify-content: space-between; height: 36px; align-items: center; }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; height: 38px; gap: 16px; }
+  .topbar a { color: var(--white); font-weight: 500; }
+  .topbar a:hover { color: var(--accent-light); }
 
   /* Navegación */
   header { position: sticky; top: 0; z-index: 20; background: var(--white); border-bottom: 1px solid var(--line); }
   nav { display: flex; align-items: center; justify-content: space-between; height: 76px; }
   .brand { display: flex; align-items: center; gap: 12px; }
-  .brand svg { width: 30px; height: 30px; }
-  .brand-name { font-family: 'Source Serif 4', serif; font-size: 1.45rem; font-weight: 600; color: var(--ink); letter-spacing: 0.01em; }
+  .brand svg { width: 30px; height: 30px; flex: none; }
+  .brand-name { font-family: 'Source Serif 4', serif; font-size: 1.45rem; font-weight: 600; color: var(--ink); }
   .brand-name span { font-weight: 400; }
   .menu { display: flex; gap: 34px; }
-  .menu a { font-size: 0.82rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text); padding: 6px 0; border-bottom: 1px solid transparent; transition: border-color .2s, color .2s; }
+  .menu a { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; padding: 6px 0; border-bottom: 1px solid transparent; transition: border-color .2s, color .2s; }
   .menu a:hover { color: var(--ink); border-color: var(--accent); }
-  .btn { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background .2s, color .2s; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 26px; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; transition: background .2s, color .2s, border-color .2s; border: 1px solid transparent; }
   .btn-dark { background: var(--ink); color: var(--white); }
   .btn-dark:hover { background: var(--accent); }
-  .btn-line { border: 1px solid var(--ink); color: var(--ink); }
+  .btn-line { border-color: var(--ink); color: var(--ink); }
   .btn-line:hover { background: var(--ink); color: var(--white); }
   .btn-light { background: var(--white); color: var(--ink); }
   .btn-light:hover { background: var(--accent); color: var(--white); }
+  .btn-ghost { border-color: rgba(255,255,255,0.4); color: var(--white); }
+  .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,0.06); }
   .arrow { transition: transform .2s; }
   .btn:hover .arrow { transform: translateX(4px); }
 
   /* Hero */
-  .hero { background: var(--paper); border-bottom: 1px solid var(--line); }
-  .hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 72px; padding-top: 104px; padding-bottom: 104px; align-items: end; }
-  .hero h1 { font-size: clamp(2.5rem, 5.2vw, 4.2rem); margin: 22px 0 0; }
+  .hero { background: var(--paper); border-bottom: 1px solid var(--line); padding: 96px 0 88px; }
+  .hero .wrap { display: grid; grid-template-columns: 1.35fr 1fr; gap: 72px; align-items: end; }
+  .hero h1 { font-size: clamp(2.3rem, 4.8vw, 3.8rem); margin-top: 22px; }
   .hero h1 em { font-style: italic; color: var(--accent); }
-  .hero-side { border-left: 1px solid var(--line); padding-left: 36px; }
-  .hero-side p { font-size: 1.08rem; color: var(--muted); margin-bottom: 30px; }
-  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero .sub { font-size: 1.08rem; color: var(--muted); margin-top: 24px; max-width: 56ch; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 34px; }
+  .leads { border-top: 1px solid var(--ink); margin-top: 14px; }
+  .lead { display: grid; grid-template-columns: 10px 1fr; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--line); align-items: baseline; }
+  .lead i { width: 9px; height: 9px; border-radius: 50%; background: var(--pc); display: block; }
+  .lead b { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1.15rem; color: var(--ink); display: block; }
+  .lead span { font-size: 0.74rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 2px; }
 
-  /* Principios */
-  .principles { border-bottom: 1px solid var(--line); }
-  .principles .wrap { display: grid; grid-template-columns: repeat(3, 1fr); }
-  .principle { padding: 44px 36px 44px 0; }
-  .principle + .principle { border-left: 1px solid var(--line); padding-left: 36px; }
-  .principle h3 { font-size: 1.3rem; margin-bottom: 8px; }
-  .principle p { color: var(--muted); font-size: 0.97rem; }
+  /* Indicadores */
+  .stats { background: var(--ink); color: #C3CDDA; }
+  .stats .wrap { display: grid; grid-template-columns: repeat(4, 1fr); }
+  .stat { padding: 44px 32px 44px 0; }
+  .stat + .stat { border-left: 1px solid rgba(255,255,255,0.12); padding-left: 32px; }
+  .stat b { font-family: 'Source Serif 4', serif; font-weight: 500; font-size: clamp(1.9rem, 2.8vw, 2.5rem); color: var(--accent-light); display: block; line-height: 1; font-variant-numeric: tabular-nums; }
+  .stat span { display: block; margin-top: 12px; font-size: 0.93rem; line-height: 1.5; }
 
-  /* Secciones */
-  section { padding: 112px 0; }
-  .head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; margin-bottom: 64px; align-items: end; }
-  .head h2 { font-size: clamp(2rem, 3.6vw, 2.9rem); margin-top: 16px; }
-  .head p { color: var(--muted); font-size: 1.08rem; }
+  /* Encabezados de sección */
+  .head { display: grid; grid-template-columns: 1fr 1.4fr; gap: 72px; margin-bottom: 56px; align-items: end; }
+  .head h2 { font-size: clamp(2rem, 3.6vw, 2.8rem); margin-top: 16px; }
+  .head p { color: var(--muted); font-size: 1.06rem; }
 
-  /* Capacidades */
-  .capabilities { border-top: 1px solid var(--ink); }
-  .cap { display: grid; grid-template-columns: 90px 1fr 1.4fr; gap: 40px; padding: 38px 0; border-bottom: 1px solid var(--line); transition: background .25s; }
-  .cap:hover { background: var(--paper); }
-  .cap .num { font-family: 'Source Serif 4', serif; font-size: 1.1rem; color: var(--accent); padding-left: 8px; }
-  .cap h3 { font-size: 1.55rem; }
-  .cap p { color: var(--muted); }
+  /* Prácticas */
+  .tabs { display: flex; flex-wrap: wrap; border-bottom: 1px solid var(--line); margin-bottom: 48px; }
+  .tab { appearance: none; background: none; border: 0; border-bottom: 2px solid transparent; margin-bottom: -1px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding: 16px 0; margin-right: 40px; display: flex; align-items: center; gap: 10px; transition: color .2s; }
+  .tab i { width: 8px; height: 8px; border-radius: 50%; background: var(--pc); opacity: .4; }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--pc); }
+  .tab[aria-selected="true"] i { opacity: 1; }
+  .pane { display: none; grid-template-columns: 1.2fr 0.9fr; gap: 64px; align-items: start; }
+  .pane.on { display: grid; }
+  .pane .num { font-family: 'Source Serif 4', serif; color: var(--pc); font-size: 1.05rem; }
+  .pane h3 { font-size: clamp(1.6rem, 2.6vw, 2.1rem); margin-top: 8px; }
+  .pane .intro { color: var(--muted); font-size: 1.04rem; margin-top: 16px; max-width: 58ch; }
+  .svc { list-style: none; margin-top: 28px; border-top: 1px solid var(--ink); }
+  .svc li { display: grid; grid-template-columns: 14px 1fr; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 0.98rem; }
+  .svc li::before { content: ""; width: 6px; height: 6px; background: var(--pc); margin-top: 0.62em; }
+  .side { background: var(--paper); border: 1px solid var(--line); border-top: 3px solid var(--pc); padding: 32px; }
+  .side h4 { font-size: 1.4rem; }
+  .side .role { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pc); margin: 6px 0 24px; }
+  .side dl { display: grid; gap: 20px; }
+  .side dt { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+  .side dd { font-size: 0.95rem; color: var(--text); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 0.76rem; font-weight: 500; background: var(--white); border: 1px solid var(--line); padding: 4px 10px; }
+  .metrics { margin-top: 24px; border-top: 1px solid var(--line); }
+  .metrics div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 0.92rem; color: var(--muted); }
+  .metrics b { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1rem; color: var(--ink); white-space: nowrap; }
+
+  /* Socios */
+  .partners { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pgrid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+  .pcard { padding: 36px 32px 36px 0; display: flex; flex-direction: column; gap: 16px; }
+  .pcard + .pcard { border-left: 1px solid var(--line); padding-left: 32px; }
+  .pcard .role { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--pc); display: flex; align-items: center; gap: 10px; }
+  .pcard .role::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--pc); }
+  .pcard h3 { font-size: 1.55rem; }
+  .pcard p { font-size: 0.95rem; color: var(--muted); }
+  .tl { list-style: none; border-top: 1px solid var(--line); }
+  .tl li { display: grid; grid-template-columns: 84px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 0.9rem; }
+  .tl b { font-weight: 600; font-size: 0.8rem; color: var(--accent); font-variant-numeric: tabular-nums; padding-top: 1px; }
+  .pcard .edu { font-size: 0.87rem; color: var(--muted); margin-top: auto; padding-top: 8px; }
+  .orgs-wrap { margin-top: 56px; }
+  .orgs { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .org { font-size: 0.85rem; font-weight: 500; color: var(--ink); border: 1px solid var(--line); background: var(--white); padding: 8px 14px; }
+  .note { font-size: 0.84rem; color: var(--muted); margin-top: 16px; font-style: italic; }
 
   /* Enfoque */
-  .approach { background: var(--ink); color: #C3CDDA; }
-  .approach .head h2 { color: var(--white); }
-  .approach .head p { color: #AEBACB; }
-  .phases { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.2); }
-  .phase { padding: 40px 36px 8px 0; position: relative; }
-  .phase + .phase { padding-left: 36px; border-left: 1px solid rgba(255,255,255,0.12); }
-  .phase::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; background: var(--accent); border-radius: 50%; }
-  .phase + .phase::before { left: 36px; }
-  .phase .label { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
-  .phase h3 { color: var(--white); font-size: 1.5rem; margin: 10px 0 12px; }
-  .phase p { font-size: 0.98rem; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
+  .step { padding: 36px 28px 8px 0; position: relative; }
+  .step + .step { border-left: 1px solid var(--line); padding-left: 28px; }
+  .step::before { content: ""; position: absolute; top: -5px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .step + .step::before { left: 28px; }
+  .step .n { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); }
+  .step h3 { font-size: 1.4rem; margin: 10px 0 12px; }
+  .step p { font-size: 0.95rem; color: var(--muted); }
+  .step .time { display: block; margin-top: 18px; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); }
+  .disclaimer { font-size: 0.86rem; color: var(--muted); margin-top: 36px; }
 
-  /* Industrias */
-  .industries { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
-  .industry { padding: 34px 30px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); transition: background .25s; }
-  .industry:hover { background: var(--paper); }
-  .industry h3 { font-size: 1.3rem; margin-bottom: 10px; }
-  .industry p { color: var(--muted); font-size: 0.95rem; }
-
-  /* Presencia */
-  .presence { background: var(--paper); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-  .cities { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--ink); }
-  .city { padding: 30px 24px 0 0; }
-  .city h3 { font-size: 1.45rem; }
-  .city span { font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
-
-  /* CTA */
-  .cta { background: var(--ink-2); color: var(--white); padding: 96px 0; }
-  .cta .wrap { display: grid; grid-template-columns: 1.4fr 1fr; gap: 60px; align-items: center; }
-  .cta h2 { color: var(--white); font-size: clamp(2rem, 3.8vw, 3rem); }
-  .cta p { color: #AEBACB; margin: 18px 0 0; font-size: 1.05rem; }
-  .cta-box { border-left: 1px solid rgba(255,255,255,0.2); padding-left: 40px; }
-  .cta-box .mail { display: block; font-family: 'Source Serif 4', serif; font-size: 1.35rem; margin: 10px 0 26px; color: var(--white); }
+  /* Contacto */
+  .contact { background: var(--ink-2); color: #C3CDDA; }
+  .contact .head h2 { color: var(--white); }
+  .contact .head p { color: #AEBACB; }
+  .cgrid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.25); }
+  .cbox { padding: 32px 28px 8px 0; }
+  .cbox + .cbox { border-left: 1px solid rgba(255,255,255,0.12); padding-left: 28px; }
+  .cbox .label { color: var(--accent-light); }
+  .cbox .v { display: block; margin-top: 10px; font-family: 'Source Serif 4', serif; font-size: 1.4rem; color: var(--white); word-break: break-word; }
+  .cbox a.v:hover { color: var(--accent-light); }
+  .cbox small { display: block; margin-top: 8px; font-size: 0.86rem; color: #9FB0C3; }
+  .contact .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 44px; }
 
   /* Pie */
   footer { background: var(--ink); color: #8E9BAD; padding: 64px 0 32px; font-size: 0.9rem; }
   .foot { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 48px; padding-bottom: 44px; border-bottom: 1px solid rgba(255,255,255,0.12); }
   .foot .brand-name { color: var(--white); }
-  .foot p { margin-top: 14px; max-width: 320px; }
-  .foot h4 { font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; font-weight: 600; }
+  .foot p { margin-top: 14px; max-width: 340px; }
+  .foot h4 { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--white); margin-bottom: 16px; font-weight: 600; }
   .foot li { list-style: none; margin-bottom: 8px; }
   .foot a:hover { color: var(--white); }
-  .legal { padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 0.82rem; }
+  .legal { padding-top: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-size: 0.8rem; }
 
-  @media (max-width: 900px) {
-    .menu, .topbar { display: none; }
-    .hero .wrap, .head, .cta .wrap, .foot { grid-template-columns: 1fr; gap: 36px; }
-    .hero .wrap { padding-top: 72px; padding-bottom: 72px; }
-    .hero-side, .cta-box { border-left: none; padding-left: 0; }
-    .principles .wrap, .phases, .industries { grid-template-columns: 1fr; }
-    .principle, .principle + .principle { padding: 30px 0; border-left: none; border-top: 1px solid var(--line); }
-    .phase, .phase + .phase { padding: 32px 0 8px; border-left: none; }
-    .phase + .phase::before { left: 0; }
-    .cap { grid-template-columns: 1fr; gap: 10px; }
-    .cap .num { padding-left: 0; }
-    .cities { grid-template-columns: 1fr 1fr; gap: 0 20px; }
-    .city { padding-bottom: 24px; }
-    section { padding: 80px 0; }
-    .nav-cta { display: none; }
+  @media (max-width: 960px) {
+    .menu, .topbar .tag { display: none; }
+    .topbar .wrap { justify-content: flex-end; }
+    .hero .wrap, .head, .pane, .foot { grid-template-columns: 1fr; gap: 40px; }
+    .hero { padding: 64px 0; }
+    section { padding: 72px 0; }
+    .stats .wrap { grid-template-columns: 1fr 1fr; }
+    .stat, .stat + .stat { padding: 28px 16px 28px 0; border-left: none; }
+    .stat:nth-child(2n) { padding-left: 16px; border-left: 1px solid rgba(255,255,255,0.12); }
+    .stat:nth-child(n+3) { border-top: 1px solid rgba(255,255,255,0.12); }
+    .pgrid, .cgrid { grid-template-columns: 1fr; }
+    .pcard, .pcard + .pcard { padding: 32px 0; border-left: none; border-bottom: 1px solid var(--line); }
+    .cbox, .cbox + .cbox { padding: 26px 0; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.12); }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .step, .step + .step { padding: 32px 20px 24px 0; border-left: none; }
+    .step + .step::before { left: 0; }
+    .step:nth-child(2n) { padding-left: 20px; border-left: 1px solid var(--line); }
+    .step:nth-child(2n)::before { left: 20px; }
+    .step:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .tab { margin-right: 24px; }
   }
+  @media (max-width: 600px) {
+    .nav-cta { display: none; }
+    .stats .wrap, .steps { grid-template-columns: 1fr; }
+    .stat:nth-child(2n), .step:nth-child(2n) { padding-left: 0; border-left: none; }
+    .step:nth-child(2n)::before { left: 0; }
+    .stat + .stat, .step + .step { border-top: 1px solid rgba(127,140,155,0.25); }
+    .tabs { flex-direction: column; }
+    .tab { margin-right: 0; padding: 12px 0; }
+    .hero-actions .btn, .contact .actions .btn { flex: 1 1 100%; }
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="wrap">
-    <span>Consultoría en datos, automatización e inteligencia artificial</span>
-    <span>Ciudad de México · Monterrey · Guadalajara · Chihuahua</span>
+    <span class="tag">Recuperación de cartera · Business Intelligence · Modelos e IA</span>
+    <span>Tel. <a href="tel:+525537827315">55 3782 7315</a> &nbsp;·&nbsp; <a href="mailto:contacto@datumnorte.com">contacto@datumnorte.com</a></span>
   </div>
 </div>
 
 <header>
-  <nav class="wrap">
-    <a href="#" class="brand" aria-label="Datum Norte">
+  <nav class="wrap" aria-label="Principal">
+    <a href="#top" class="brand" aria-label="Datum Norte, inicio">
       <svg viewBox="0 0 32 32" aria-hidden="true">
         <rect x="1" y="1" width="30" height="30" fill="none" stroke="#0B1F3A" stroke-width="2"/>
         <path d="M16 6 L22 24 L16 20 L10 24 Z" fill="#A9824E"/>
@@ -165,202 +232,309 @@
       <span class="brand-name">Datum <span>Norte</span></span>
     </a>
     <div class="menu">
-      <a href="#capacidades">Capacidades</a>
+      <a href="#practicas">Prácticas</a>
+      <a href="#socios">Socios</a>
       <a href="#enfoque">Enfoque</a>
-      <a href="#industrias">Industrias</a>
-      <a href="#presencia">Presencia</a>
+      <a href="#contacto">Contacto</a>
     </div>
-    <a href="#contacto" class="btn btn-dark nav-cta">Contacto</a>
+    <a href="#contacto" class="btn btn-dark nav-cta">Agendar diagnóstico</a>
   </nav>
 </header>
 
-<section class="hero" style="padding:0">
+<main id="top">
+
+<section class="hero">
   <div class="wrap">
     <div>
-      <span class="kicker">Firma de consultoría tecnológica</span>
-      <h1>Decisiones más claras. Operaciones más <em>inteligentes.</em></h1>
-    </div>
-    <div class="hero-side">
-      <p>Acompañamos a empresas e instituciones en la transformación de sus datos y procesos: desde el diagnóstico hasta la operación continua de soluciones de automatización e inteligencia artificial.</p>
+      <span class="kicker">Firma de consultoría · Estado de México</span>
+      <h1>Tres prácticas, tres socios que <em>sí operaron</em> lo que asesoran.</h1>
+      <p class="sub">Recuperación de cartera, inteligencia de negocio y modelos de machine learning. Cada frente lo dirige quien lo hizo dentro de la operación de bancos, aseguradoras, retail y grupos automotrices, no un equipo junior siguiendo una plantilla.</p>
       <div class="hero-actions">
-        <a href="#contacto" class="btn btn-dark">Solicitar diagnóstico <span class="arrow">→</span></a>
-        <a href="#capacidades" class="btn btn-line">Capacidades</a>
+        <a href="#contacto" class="btn btn-dark">Agendar diagnóstico <span class="arrow">→</span></a>
+        <a href="#practicas" class="btn btn-line">Ver las prácticas</a>
+      </div>
+    </div>
+    <div>
+      <span class="label">Quién dirige cada frente</span>
+      <div class="leads">
+        <div class="lead" style="--pc:var(--p1)"><i></i><div><b>Sergio López Aldama</b><span>Recuperación de cartera y activos</span></div></div>
+        <div class="lead" style="--pc:var(--p2)"><i></i><div><b>Sergio López O.</b><span>Business Intelligence y estrategia de datos</span></div></div>
+        <div class="lead" style="--pc:var(--p3)"><i></i><div><b>Agustín Velázquez S.</b><span>Modelos, machine learning e IA</span></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<div class="principles">
+<div class="stats" role="region" aria-label="Indicadores">
   <div class="wrap">
-    <div class="principle">
-      <h3>Rigor analítico</h3>
-      <p>Cada recomendación parte de evidencia y de los datos reales de su operación.</p>
-    </div>
-    <div class="principle">
-      <h3>Ejecución medible</h3>
-      <p>Implementamos soluciones con objetivos e indicadores definidos desde el inicio.</p>
-    </div>
-    <div class="principle">
-      <h3>Relación de largo plazo</h3>
-      <p>Permanecemos a su lado para operar, medir y mejorar cada solución.</p>
-    </div>
+    <div class="stat"><b>20+</b><span>Años dirigiendo operaciones de recuperación</span></div>
+    <div class="stat"><b>$2,500 MDP</b><span>Cartera hipotecaria bajo administración</span></div>
+    <div class="stat"><b>5% → 65%</b><span>Aportación de cobranza domiciliaria lograda en BBVA Auto</span></div>
+    <div class="stat"><b>30</b><span>Personas en las estructuras dirigidas por nuestros socios</span></div>
   </div>
 </div>
 
-<section id="capacidades">
+<section id="practicas">
   <div class="wrap">
     <div class="head">
       <div>
-        <span class="kicker">Capacidades</span>
-        <h2>Lo que hacemos por nuestros clientes</h2>
+        <span class="kicker">Prácticas</span>
+        <h2>Qué hacemos y quién lo firma</h2>
       </div>
-      <p>Integramos estrategia, analítica y tecnología para resolver problemas concretos de negocio, con soluciones que se adaptan a la forma en que ya opera su organización.</p>
+      <p>Tres frentes especializados, cada uno bajo la responsabilidad directa de un socio con experiencia operativa en el tema.</p>
     </div>
-    <div class="capabilities">
-      <div class="cap">
-        <span class="num">01</span>
-        <h3>Analítica y ciencia de datos</h3>
-        <p>Modelos, indicadores y tableros ejecutivos que integran sus fuentes de información y convierten los datos en decisiones oportunas.</p>
+
+    <div class="tabs" role="tablist" aria-label="Prácticas">
+      <button class="tab" role="tab" id="t1" aria-controls="p1" aria-selected="true" style="--pc:var(--p1)"><i></i>Recuperación de cartera</button>
+      <button class="tab" role="tab" id="t2" aria-controls="p2" aria-selected="false" tabindex="-1" style="--pc:var(--p2)"><i></i>Business Intelligence</button>
+      <button class="tab" role="tab" id="t3" aria-controls="p3" aria-selected="false" tabindex="-1" style="--pc:var(--p3)"><i></i>Modelos e IA</button>
+    </div>
+
+    <div class="pane on" id="p1" role="tabpanel" aria-labelledby="t1" style="--pc:var(--p1)">
+      <div>
+        <span class="num">Práctica 01</span>
+        <h3>Recuperación de cartera y activos</h3>
+        <p class="intro">Diseñamos y operamos estrategias de recuperación para cartera automotriz, hipotecaria, tarjeta, nómina y cartera castigada. Entramos con un diagnóstico de cartera y salimos con estructura, indicadores y resultados medibles.</p>
+        <ul class="svc">
+          <li><span>Diagnóstico de cartera y segmentación por riesgo, morosidad y prioridad</span></li>
+          <li><span>Estrategia de cobranza domiciliaria, telefónica, judicial y extrajudicial</span></li>
+          <li><span>Recuperación de activos: devolución de unidades, dación en pago y regularización</span></li>
+          <li><span>Esquemas de convenios, liquidaciones y negociación con quita</span></li>
+          <li><span>Diseño de estructura operativa, capacitación y perfilamiento de ejecutivos</span></li>
+          <li><span>Tableros de KPIs y reportes mensuales auditables para dirección</span></li>
+        </ul>
       </div>
-      <div class="cap">
-        <span class="num">02</span>
-        <h3>Automatización de procesos</h3>
-        <p>Rediseño y automatización de flujos operativos y administrativos para reducir errores, tiempos de respuesta y costos.</p>
+      <aside class="side">
+        <h4>Sergio López Aldama</h4>
+        <span class="role">Socio director · Recuperación</span>
+        <dl>
+          <div><dt>Sectores</dt><dd>Banca, financieras automotrices, hipotecario, consumo y tarjeta</dd></div>
+          <div><dt>Trayectoria</dt><dd>BBVA Auto, Banco Santander, SICREA, SECORSE, LEGAXXI, NR Finance, Banco Azteca</dd></div>
+          <div><dt>Especialidad</dt><dd class="chips"><span class="chip">Cobranza judicial</span><span class="chip">Cartera castigada</span><span class="chip">Negociación compleja</span><span class="chip">Gestión de KPIs</span></dd></div>
+        </dl>
+        <div class="metrics">
+          <div><span>Años de experiencia</span><b>20+</b></div>
+          <div><span>Créditos hipotecarios supervisados</span><b>~2,200</b></div>
+          <div><span>Mejora en devolución de unidades</span><b>80%</b></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="pane" id="p2" role="tabpanel" aria-labelledby="t2" style="--pc:var(--p2)" hidden>
+      <div>
+        <span class="num">Práctica 02</span>
+        <h3>Business Intelligence y estrategia de datos</h3>
+        <p class="intro">Traducimos las necesidades de dirección en tableros, métricas y procesos automatizados. El objetivo no es tener más reportes: es que el consejo y las direcciones vean el mismo número y decidan más rápido.</p>
+        <ul class="svc">
+          <li><span>Estrategia analítica y hoja de ruta de datos por unidad de negocio</span></li>
+          <li><span>Tableros ejecutivos para Dirección General y Consejo con indicadores financieros, comerciales y operativos</span></li>
+          <li><span>Gobierno y estandarización de información corporativa entre múltiples fuentes</span></li>
+          <li><span>Automatización de reporting y consolidación financiera</span></li>
+          <li><span>Métricas de seguimiento presupuestal, productividad y análisis Pareto</span></li>
+          <li><span>Formación de equipos internos y cultura de decisiones con datos</span></li>
+        </ul>
       </div>
-      <div class="cap">
-        <span class="num">03</span>
-        <h3>Inteligencia artificial aplicada</h3>
-        <p>Asistentes inteligentes, clasificación documental y análisis automatizado, integrados de forma segura a sus herramientas de trabajo.</p>
+      <aside class="side">
+        <h4>Sergio López O.</h4>
+        <span class="role">Socio director · Datos y BI</span>
+        <dl>
+          <div><dt>Sectores</dt><dd>Automotriz, telecomunicaciones, bebidas y retail financiero</dd></div>
+          <div><dt>Trayectoria</dt><dd>Grupo Andrade, Totalplay, Arca Continental – Coca-Cola, Grupo Salinas, Instituto de Ciencias Físicas UNAM</dd></div>
+          <div><dt>Stack</dt><dd class="chips"><span class="chip">Python</span><span class="chip">SQL</span><span class="chip">Power BI</span><span class="chip">Tableau</span><span class="chip">Databricks</span><span class="chip">PySpark</span><span class="chip">Azure</span><span class="chip">AWS</span><span class="chip">GCP</span></dd></div>
+        </dl>
+        <div class="metrics">
+          <div><span>Formación</span><b>Física, UNAM</b></div>
+          <div><span>Nivel de interlocución</span><b>Dirección y consejo</b></div>
+          <div><span>Docencia</span><b>Fac. de Ciencias</b></div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="pane" id="p3" role="tabpanel" aria-labelledby="t3" style="--pc:var(--p3)" hidden>
+      <div>
+        <span class="num">Práctica 03</span>
+        <h3>Modelos, machine learning e IA</h3>
+        <p class="intro">Modelos que salen a producción y se monitorean, no análisis que se quedan en una laptop. Con base actuarial para los casos donde el número tiene consecuencias: riesgo, siniestralidad, mora y talento.</p>
+        <ul class="svc">
+          <li><span>Modelos predictivos de propensión, rotación, desempeño, siniestralidad y mora</span></li>
+          <li><span>Administración de riesgos: mercado, liquidez y crédito</span></li>
+          <li><span>Datamarts y arquitectura de datos para analítica avanzada</span></li>
+          <li><span>Puesta en producción, actualización periódica y monitoreo de desempeño</span></li>
+          <li><span>Automatización de procesos y conciliaciones con alto volumen de registros</span></li>
+          <li><span>Tableros y visualización para seguimiento ejecutivo</span></li>
+        </ul>
       </div>
-      <div class="cap">
-        <span class="num">04</span>
-        <h3>Plataformas digitales</h3>
-        <p>Sitios y portales corporativos conectados a sus procesos, diseñados para generar confianza y resultados.</p>
-      </div>
+      <aside class="side">
+        <h4>Agustín Velázquez S.</h4>
+        <span class="role">Socio director · Modelos e IA</span>
+        <dl>
+          <div><dt>Sectores</dt><dd>Seguros, banca, retail y capital humano</dd></div>
+          <div><dt>Trayectoria</dt><dd>Grupo Salinas, Seguros Atlas, Seguros Banamex, Nielsen Ibope, Banamex, Invex</dd></div>
+          <div><dt>Stack</dt><dd class="chips"><span class="chip">Python</span><span class="chip">R</span><span class="chip">SQL</span><span class="chip">Tableau</span><span class="chip">Power BI</span><span class="chip">PostgreSQL</span><span class="chip">SAP HANA</span><span class="chip">C/C++</span></dd></div>
+        </dl>
+        <div class="metrics">
+          <div><span>Formación</span><b>Actuaría, UNAM</b></div>
+          <div><span>Especialización</span><b>Estadística, IIMAS</b></div>
+          <div><span>Volumen operado</span><b>500 mil reg./día</b></div>
+        </div>
+      </aside>
     </div>
   </div>
 </section>
 
-<section id="enfoque" class="approach">
+<section id="socios" class="partners">
+  <div class="wrap">
+    <div class="head">
+      <div>
+        <span class="kicker">Socios</span>
+        <h2>Con quién va a trabajar</h2>
+      </div>
+      <p>No hay capa intermedia: el socio que realiza el diagnóstico es el mismo que permanece durante la implementación.</p>
+    </div>
+    <div class="pgrid">
+      <article class="pcard" style="--pc:var(--p1)">
+        <span class="role">Recuperación de cartera</span>
+        <h3>Sergio López Aldama</h3>
+        <p>Directivo de recuperación con más de 20 años en cobranza domiciliaria, telefónica, judicial y extrajudicial para instituciones financieras y el sector automotriz. Ha administrado carteras de alto valor y dirigido estructuras de hasta 3 supervisores y 30 ejecutivos.</p>
+        <ul class="tl">
+          <li><b>2023–act.</b><span>Especialista en Recuperación, BBVA Auto</span></li>
+          <li><b>2021–2023</b><span>Coordinador de Cobranza Judicial y Extrajudicial, SICREA</span></li>
+          <li><b>2014–2019</b><span>Supervisor Nacional de Cobranza Hipotecaria, Banco Santander</span></li>
+          <li><b>2000–2013</b><span>Cobranza para HSBC, Banamex, Banco Azteca y NR Finance</span></li>
+        </ul>
+        <p class="edu">Cobertura nacional y multirregional: CDMX, Estado de México, Jalisco y Veracruz.</p>
+      </article>
+      <article class="pcard" style="--pc:var(--p2)">
+        <span class="role">Business Intelligence</span>
+        <h3>Sergio López O.</h3>
+        <p>Especialista en traducir necesidades estratégicas del negocio en soluciones analíticas escalables: modelos predictivos, visualización ejecutiva y automatización de procesos. Ha liderado equipos multidisciplinarios de BI y ciencia de datos.</p>
+        <ul class="tl">
+          <li><b>2026–act.</b><span>Subdirector de BI &amp; Business Analytics, Grupo Andrade</span></li>
+          <li><b>2025–2026</b><span>Head of Advanced Analytics, Totalplay</span></li>
+          <li><b>2023–2025</b><span>Business Analytics Manager, Arca Continental – Coca-Cola</span></li>
+          <li><b>2020–2023</b><span>Analítica predictiva e IA, Grupo Salinas</span></li>
+        </ul>
+        <p class="edu">Licenciatura en Física, Facultad de Ciencias UNAM. Certificaciones en Azure, ciencia de datos y analítica aplicada. Docente de estadística y modelos matemáticos.</p>
+      </article>
+      <article class="pcard" style="--pc:var(--p3)">
+        <span class="role">Modelos e IA</span>
+        <h3>Agustín Velázquez S.</h3>
+        <p>Actuario y gerente de ciencia de datos, modelos, machine learning e IA, con experiencia en los sectores financiero, de seguros y de recursos humanos. Líder de proyectos que optimizan procesos y sostienen decisiones estratégicas.</p>
+        <ul class="tl">
+          <li><b>2021–act.</b><span>Gerente de Modelos e IA, Grupo Salinas</span></li>
+          <li><b>2019–2021</b><span>Consultor de Datos, Grupo Salinas</span></li>
+          <li><b>2018–2019</b><span>Riesgos y analítica, Seguros Banamex y Seguros Atlas</span></li>
+          <li><b>2009–2018</b><span>BI y conciliaciones, Nielsen Ibope, Banamex e Invex</span></li>
+        </ul>
+        <p class="edu">Licenciatura en Actuaría, Facultad de Ciencias UNAM. Especialización en Estadística Aplicada, IIMAS. Diplomados en minería de datos, mercados financieros y análisis de riesgo.</p>
+      </article>
+    </div>
+    <div class="orgs-wrap">
+      <span class="label">Dónde han operado nuestros socios</span>
+      <div class="orgs">
+        <span class="org">BBVA</span><span class="org">Banco Santander</span><span class="org">Banamex</span><span class="org">Grupo Andrade</span><span class="org">Totalplay</span><span class="org">Arca Continental – Coca-Cola</span><span class="org">Grupo Salinas</span><span class="org">Seguros Atlas</span><span class="org">Nielsen Ibope</span><span class="org">Invex</span><span class="org">SICREA</span><span class="org">UNAM</span>
+      </div>
+      <p class="note">Las organizaciones mencionadas corresponden a la trayectoria profesional de los socios, no a clientes de la firma.</p>
+    </div>
+  </div>
+</section>
+
+<section id="enfoque">
   <div class="wrap">
     <div class="head">
       <div>
         <span class="kicker">Nuestro enfoque</span>
-        <h2>Del diagnóstico a la operación continua</h2>
+        <h2>Cuatro etapas, con entregable en cada una</h2>
       </div>
-      <p>No entregamos un proyecto y nos retiramos. Nos integramos como el área de datos y tecnología de su organización, con un modelo de acompañamiento mensual.</p>
+      <p>Del diagnóstico a la operación continua. Nos integramos como el área de datos y recuperación de su organización, con un esquema de acompañamiento mensual una vez implementada la solución.</p>
     </div>
-    <div class="phases">
-      <div class="phase">
-        <span class="label">Fase 1</span>
+    <div class="steps">
+      <div class="step">
+        <span class="n">Etapa 01</span>
         <h3>Diagnóstico</h3>
-        <p>Evaluamos procesos, sistemas y datos para identificar las oportunidades de mayor impacto.</p>
+        <p>Levantamiento de datos, procesos y cartera. Línea base de indicadores y detección de las fugas más costosas.</p>
+        <span class="time">2 a 3 semanas</span>
       </div>
-      <div class="phase">
-        <span class="label">Fase 2</span>
+      <div class="step">
+        <span class="n">Etapa 02</span>
+        <h3>Diseño</h3>
+        <p>Estrategia, modelos y tableros con caso de negocio: qué mueve cada iniciativa y cuánto aporta.</p>
+        <span class="time">3 a 4 semanas</span>
+      </div>
+      <div class="step">
+        <span class="n">Etapa 03</span>
         <h3>Implementación</h3>
-        <p>Diseñamos e integramos las soluciones con entregas por etapas y resultados verificables.</p>
+        <p>Puesta en marcha con su equipo: automatización, despliegue productivo y ajuste con datos reales.</p>
+        <span class="time">8 a 12 semanas</span>
       </div>
-      <div class="phase">
-        <span class="label">Fase 3</span>
+      <div class="step">
+        <span class="n">Etapa 04</span>
         <h3>Acompañamiento</h3>
-        <p>Soporte, monitoreo, reportes y mejora continua para que cada solución evolucione con su negocio.</p>
+        <p>Capacitación, documentación, monitoreo, reportes mensuales y mejora continua de cada solución.</p>
+        <span class="time">Continuo</span>
       </div>
     </div>
+    <p class="disclaimer">Los tiempos son estimados y se ajustan al alcance de cada proyecto.</p>
   </div>
 </section>
 
-<section id="industrias">
+<section id="contacto" class="contact">
   <div class="wrap">
     <div class="head">
       <div>
-        <span class="kicker">Industrias</span>
-        <h2>Donde generamos mayor valor</h2>
+        <span class="kicker">Contacto</span>
+        <h2>La primera conversación no tiene costo</h2>
       </div>
-      <p>Nos especializamos en sectores con alta carga de trabajo manual, donde la automatización y el uso inteligente de los datos generan resultados visibles en poco tiempo.</p>
+      <p>Cuéntenos qué está pasando con su cartera, sus tableros o sus modelos. Si podemos ayudar, le decimos cómo y en cuánto tiempo. Si no, también.</p>
     </div>
-    <div class="industries">
-      <div class="industry">
-        <h3>Servicios jurídicos</h3>
-        <p>Gestión documental, seguimiento de expedientes y control de plazos automatizados.</p>
+    <div class="cgrid">
+      <div class="cbox">
+        <span class="label">Teléfono</span>
+        <a class="v" href="tel:+525537827315">55 3782 7315</a>
+        <small>Lunes a viernes, 9:00 a 19:00 (CDMX)</small>
       </div>
-      <div class="industry">
-        <h3>Recuperación de cartera</h3>
-        <p>Priorización de cuentas, seguimiento automatizado y analítica de cobranza.</p>
+      <div class="cbox">
+        <span class="label">Correo</span>
+        <a class="v" href="mailto:contacto@datumnorte.com">contacto@datumnorte.com</a>
+        <small>Propuestas y documentación</small>
       </div>
-      <div class="industry">
-        <h3>Sector automotriz</h3>
-        <p>Indicadores comerciales, cálculo de comisiones y tableros de desempeño por agencia.</p>
+      <div class="cbox">
+        <span class="label">Cobertura</span>
+        <span class="v">Naucalpan, Estado de México</span>
+        <small>Operación en toda la República: CDMX, Monterrey, Guadalajara, Chihuahua y más</small>
       </div>
-      <div class="industry">
-        <h3>Sector inmobiliario</h3>
-        <p>Gestión de prospectos, inventario y reportes comerciales en tiempo real.</p>
-      </div>
-      <div class="industry">
-        <h3>Salud y servicios clínicos</h3>
-        <p>Agenda, expedientes y seguimiento a pacientes con procesos más eficientes.</p>
-      </div>
-      <div class="industry">
-        <h3>Sector público</h3>
-        <p>Modernización de procesos, tableros de gestión y analítica para la toma de decisiones.</p>
-      </div>
+    </div>
+    <div class="actions">
+      <a class="btn btn-light" href="https://wa.me/525537827315?text=Hola%2C%20quiero%20agendar%20un%20diagn%C3%B3stico%20con%20Datum%20Norte." target="_blank" rel="noopener">Escribir por WhatsApp <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="tel:+525537827315">Llamar ahora</a>
+      <a class="btn btn-ghost" href="mailto:contacto@datumnorte.com?subject=Solicitud%20de%20diagn%C3%B3stico%20%E2%80%93%20Datum%20Norte">Enviar correo</a>
     </div>
   </div>
 </section>
 
-<section id="presencia" class="presence">
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <span class="kicker">Presencia</span>
-        <h2>Alcance nacional</h2>
-      </div>
-      <p>Atendemos a empresas e instituciones en todo México, con trabajo remoto y presencial según las necesidades de cada proyecto.</p>
-    </div>
-    <div class="cities">
-      <div class="city"><h3>Ciudad de México</h3><span>Sede</span></div>
-      <div class="city"><h3>Monterrey</h3><span>Nuevo León</span></div>
-      <div class="city"><h3>Guadalajara</h3><span>Jalisco</span></div>
-      <div class="city"><h3>Chihuahua</h3><span>Chihuahua</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="cta" id="contacto">
-  <div class="wrap">
-    <div>
-      <span class="kicker">Contacto</span>
-      <h2 style="margin-top:16px">Conversemos sobre los retos de su organización</h2>
-      <p>En una primera sesión identificamos qué procesos pueden automatizarse y el impacto estimado para su operación.</p>
-    </div>
-    <div class="cta-box">
-      <span class="kicker">Escríbanos</span>
-      <a class="mail" href="mailto:contacto@datumnorte.com">contacto@datumnorte.com</a>
-      <a href="mailto:contacto@datumnorte.com?subject=Solicitud%20de%20diagn%C3%B3stico" class="btn btn-light">Solicitar diagnóstico <span class="arrow">→</span></a>
-    </div>
-  </div>
-</div>
+</main>
 
 <footer>
   <div class="wrap">
     <div class="foot">
       <div>
         <span class="brand-name">Datum <span>Norte</span></span>
-        <p>Consultoría en datos, automatización e inteligencia artificial para empresas e instituciones en México.</p>
+        <p>Recuperación de cartera, Business Intelligence y Modelos de IA para empresas e instituciones en México.</p>
       </div>
       <div>
         <h4>Firma</h4>
         <ul>
-          <li><a href="#capacidades">Capacidades</a></li>
+          <li><a href="#practicas">Prácticas</a></li>
+          <li><a href="#socios">Socios</a></li>
           <li><a href="#enfoque">Enfoque</a></li>
-          <li><a href="#industrias">Industrias</a></li>
         </ul>
       </div>
       <div>
         <h4>Contacto</h4>
         <ul>
+          <li><a href="tel:+525537827315">55 3782 7315</a></li>
           <li><a href="mailto:contacto@datumnorte.com">contacto@datumnorte.com</a></li>
-          <li>Ciudad de México</li>
+          <li>Naucalpan, Estado de México</li>
         </ul>
       </div>
     </div>
@@ -371,5 +545,29 @@
   </div>
 </footer>
 
+<script>
+  const tabs = [...document.querySelectorAll('.tab')];
+  function select(i) {
+    tabs.forEach((t, j) => {
+      const on = i === j;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      const pane = document.getElementById(t.getAttribute('aria-controls'));
+      pane.classList.toggle('on', on);
+      pane.hidden = !on;
+    });
+  }
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(i));
+    tab.addEventListener('keydown', e => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') {
+        e.preventDefault();
+        const n = (i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length;
+        select(n);
+        tabs[n].focus();
+      }
+    });
+  });
+</script>
 </body>
 </html>
