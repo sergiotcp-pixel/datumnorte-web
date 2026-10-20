@@ -211,6 +211,32 @@
     .hero-actions .btn, .contact .actions .btn { flex: 1 1 100%; }
   }
   @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+  /* Asistente (chatbot de preguntas guiadas) */
+  .dn-launch { position: fixed; right: 24px; bottom: 24px; z-index: 60; display: inline-flex; align-items: center; gap: 10px; background: var(--ink); color: var(--white); border: 1px solid var(--ink); padding: 14px 20px; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer; box-shadow: 0 10px 30px rgba(11,31,58,0.25); transition: background .2s; }
+  .dn-launch:hover { background: var(--accent); border-color: var(--accent); }
+  .dn-launch svg { width: 18px; height: 18px; flex: none; }
+  .dn-panel { position: fixed; right: 24px; bottom: 24px; z-index: 61; width: 380px; max-height: min(620px, calc(100vh - 48px)); display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-top: 3px solid var(--accent); box-shadow: 0 20px 50px rgba(11,31,58,0.28); }
+  .dn-panel[hidden] { display: none; }
+  .dn-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 18px; background: var(--ink); color: var(--white); }
+  .dn-head b { font-family: 'Source Serif 4', serif; font-weight: 600; font-size: 1.1rem; display: block; }
+  .dn-head span { font-size: 0.72rem; letter-spacing: 0.08em; color: #AEBACB; }
+  .dn-close { appearance: none; background: none; border: 1px solid rgba(255,255,255,0.3); color: var(--white); width: 32px; height: 32px; font-size: 1.1rem; line-height: 1; cursor: pointer; flex: none; }
+  .dn-close:hover { border-color: var(--white); }
+  .dn-log { flex: 1; overflow-y: auto; padding: 18px; display: flex; flex-direction: column; gap: 12px; background: var(--paper); }
+  .dn-msg { max-width: 88%; padding: 12px 14px; font-size: 0.92rem; line-height: 1.55; white-space: pre-line; }
+  .dn-bot { align-self: flex-start; background: var(--white); border: 1px solid var(--line); border-left: 3px solid var(--accent); color: var(--text); }
+  .dn-user { align-self: flex-end; background: var(--ink); color: var(--white); }
+  .dn-opts { display: flex; flex-wrap: wrap; gap: 8px; padding: 14px 18px 18px; border-top: 1px solid var(--line); background: var(--white); }
+  .dn-opt { appearance: none; background: var(--white); border: 1px solid var(--ink); color: var(--ink); padding: 8px 12px; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: 500; cursor: pointer; text-align: left; transition: background .2s, color .2s; }
+  .dn-opt:hover { background: var(--ink); color: var(--white); }
+  a.dn-opt { display: inline-block; }
+  .dn-opt.dn-cta { background: var(--accent); border-color: var(--accent); color: var(--white); }
+  .dn-opt.dn-cta:hover { background: var(--ink); border-color: var(--ink); }
+  @media (max-width: 600px) {
+    .dn-launch { right: 16px; bottom: 16px; }
+    .dn-panel { right: 16px; left: 16px; bottom: 16px; width: auto; max-height: calc(100vh - 32px); }
+  }
 </style>
 </head>
 <body>
@@ -568,6 +594,144 @@
       }
     });
   });
+</script>
+
+<!-- Asistente Datum Norte: chatbot de preguntas guiadas, sin servidor ni IA -->
+<button class="dn-launch" id="dn-launch" aria-controls="dn-panel" aria-expanded="false">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1.1-4.6A8 8 0 1 1 21 12z"/></svg>
+  ¿Le ayudamos?
+</button>
+<div class="dn-panel" id="dn-panel" role="dialog" aria-label="Asistente de Datum Norte" hidden>
+  <div class="dn-head">
+    <div><b>Asistente Datum Norte</b><span>Respuestas rápidas sobre la firma</span></div>
+    <button class="dn-close" id="dn-close" aria-label="Cerrar asistente">×</button>
+  </div>
+  <div class="dn-log" id="dn-log" aria-live="polite"></div>
+  <div class="dn-opts" id="dn-opts"></div>
+</div>
+<script>
+(function () {
+  const WA = 'https://wa.me/525537827315?text=' + encodeURIComponent('Hola, quiero agendar un diagnóstico con Datum Norte.');
+  const MAIL = 'mailto:contacto@datumnorte.com?subject=' + encodeURIComponent('Solicitud de diagnóstico – Datum Norte');
+  const TEL = 'tel:+525537827315';
+
+  const ACT = [
+    { t: 'Quiero agendar un diagnóstico', go: 'agendar', cta: true },
+    { t: 'Volver al inicio', go: 'inicio' }
+  ];
+
+  const N = {
+    inicio: {
+      m: 'Hola, soy el asistente de Datum Norte. ¿En qué le puedo ayudar?',
+      o: [
+        { t: '¿Qué hace Datum Norte?', go: 'firma' },
+        { t: 'Recuperación de cartera', go: 'cartera' },
+        { t: 'Business Intelligence', go: 'bi' },
+        { t: 'Modelos e IA', go: 'ia' },
+        { t: '¿Cómo trabajan?', go: 'enfoque' },
+        { t: '¿Quiénes son los socios?', go: 'socios' },
+        { t: '¿Cuánto cuesta?', go: 'costo' },
+        { t: 'Quiero agendar un diagnóstico', go: 'agendar', cta: true }
+      ]
+    },
+    firma: {
+      m: 'Somos una firma de consultoría con tres prácticas: recuperación de cartera, business intelligence y modelos de IA.\n\nCada una la dirige un socio que la operó dentro de bancos, aseguradoras, retail y grupos automotrices. El socio que hace el diagnóstico es el mismo que se queda durante la implementación.',
+      o: [{ t: 'Ver las tres prácticas', go: 'practicas' }, { t: '¿Quiénes son los socios?', go: 'socios' }].concat(ACT)
+    },
+    practicas: {
+      m: '¿Cuál le interesa?',
+      o: [{ t: 'Recuperación de cartera', go: 'cartera' }, { t: 'Business Intelligence', go: 'bi' }, { t: 'Modelos e IA', go: 'ia' }].concat(ACT)
+    },
+    cartera: {
+      m: 'Recuperación de cartera y activos, dirigida por Sergio López Aldama (más de 20 años en BBVA Auto, Santander, SICREA y otros).\n\nDiseñamos y operamos estrategias para cartera automotriz, hipotecaria, tarjeta, nómina y castigada:\n• Diagnóstico y segmentación por riesgo y morosidad\n• Cobranza domiciliaria, telefónica, judicial y extrajudicial\n• Recuperación de activos y convenios con quita\n• Estructura operativa, capacitación y tableros de KPIs',
+      o: [{ t: 'Business Intelligence', go: 'bi' }, { t: 'Modelos e IA', go: 'ia' }].concat(ACT)
+    },
+    bi: {
+      m: 'Business Intelligence y estrategia de datos, dirigida por Sergio López O. (Grupo Andrade, Totalplay, Arca Continental, Grupo Salinas).\n\nTraducimos las necesidades de dirección en tableros y procesos automatizados:\n• Tableros ejecutivos para Dirección General y Consejo\n• Gobierno y estandarización de información\n• Automatización de reportes y consolidación financiera\n• Formación de equipos internos',
+      o: [{ t: 'Recuperación de cartera', go: 'cartera' }, { t: 'Modelos e IA', go: 'ia' }].concat(ACT)
+    },
+    ia: {
+      m: 'Modelos, machine learning e IA, dirigida por Agustín Velázquez S., actuario (Grupo Salinas, Seguros Atlas, Banamex).\n\nModelos que salen a producción y se monitorean:\n• Modelos predictivos de propensión, rotación, siniestralidad y mora\n• Administración de riesgos de mercado, liquidez y crédito\n• Datamarts y arquitectura de datos\n• Automatización de procesos y conciliaciones de alto volumen',
+      o: [{ t: 'Recuperación de cartera', go: 'cartera' }, { t: 'Business Intelligence', go: 'bi' }].concat(ACT)
+    },
+    enfoque: {
+      m: 'Trabajamos en cuatro etapas, con un entregable en cada una:\n\n1. Diagnóstico (2 a 3 semanas)\n2. Diseño (3 a 4 semanas)\n3. Implementación (8 a 12 semanas)\n4. Acompañamiento continuo con reportes mensuales\n\nLos tiempos se ajustan al alcance de cada proyecto.',
+      o: [{ t: '¿Cuánto cuesta?', go: 'costo' }].concat(ACT)
+    },
+    socios: {
+      m: '• Sergio López Aldama — Recuperación de cartera. Más de 20 años en BBVA Auto, Santander, SICREA, HSBC, Banamex y Banco Azteca.\n\n• Sergio López O. — Business Intelligence. Físico por la UNAM; Grupo Andrade, Totalplay, Arca Continental y Grupo Salinas.\n\n• Agustín Velázquez S. — Modelos e IA. Actuario por la UNAM; Grupo Salinas, Seguros Atlas, Banamex e Invex.',
+      o: [{ t: 'Ver las tres prácticas', go: 'practicas' }].concat(ACT)
+    },
+    costo: {
+      m: 'La primera conversación no tiene costo. En ella revisamos su situación y, si podemos ayudar, le decimos cómo, en cuánto tiempo y con qué presupuesto. Cada propuesta se arma según el alcance del proyecto.',
+      o: ACT
+    },
+    agendar: {
+      m: 'Con gusto. Elija cómo prefiere contactarnos. Atendemos de lunes a viernes, de 9:00 a 19:00 (hora del centro de México).',
+      o: [
+        { t: 'Escribir por WhatsApp', href: WA, cta: true },
+        { t: 'Llamar al 55 3782 7315', href: TEL },
+        { t: 'Enviar un correo', href: MAIL },
+        { t: 'Volver al inicio', go: 'inicio' }
+      ]
+    }
+  };
+
+  const launch = document.getElementById('dn-launch');
+  const panel = document.getElementById('dn-panel');
+  const log = document.getElementById('dn-log');
+  const opts = document.getElementById('dn-opts');
+  let started = false;
+
+  function say(text, who) {
+    const d = document.createElement('div');
+    d.className = 'dn-msg ' + (who === 'user' ? 'dn-user' : 'dn-bot');
+    d.textContent = text;
+    log.appendChild(d);
+    log.scrollTop = log.scrollHeight;
+  }
+
+  function show(key) {
+    const node = N[key];
+    say(node.m, 'bot');
+    opts.innerHTML = '';
+    node.o.forEach(function (o) {
+      let el;
+      if (o.href) {
+        el = document.createElement('a');
+        el.href = o.href;
+        if (o.href.indexOf('http') === 0) { el.target = '_blank'; el.rel = 'noopener'; }
+      } else {
+        el = document.createElement('button');
+        el.type = 'button';
+        el.addEventListener('click', function () { say(o.t, 'user'); show(o.go); });
+      }
+      el.className = 'dn-opt' + (o.cta ? ' dn-cta' : '');
+      el.textContent = o.t;
+      opts.appendChild(el);
+    });
+  }
+
+  function open() {
+    panel.hidden = false;
+    launch.hidden = true;
+    launch.setAttribute('aria-expanded', 'true');
+    if (!started) { started = true; show('inicio'); }
+    const first = opts.querySelector('.dn-opt');
+    if (first) first.focus();
+  }
+
+  function close() {
+    panel.hidden = true;
+    launch.hidden = false;
+    launch.setAttribute('aria-expanded', 'false');
+    launch.focus();
+  }
+
+  launch.addEventListener('click', open);
+  document.getElementById('dn-close').addEventListener('click', close);
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !panel.hidden) close(); });
+})();
 </script>
 </body>
 </html>
