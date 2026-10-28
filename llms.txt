@@ -1,0 +1,20 @@
+# Datum Norte
+
+> Firma de consultoría en México (Naucalpan, Estado de México) especializada en recuperación de cartera y cobranza, Business Intelligence y estrategia de datos, y modelos de machine learning e inteligencia artificial para empresas e instituciones. Atiende toda la República Mexicana. La primera conversación de diagnóstico no tiene costo.
+
+## Prácticas
+
+- **Recuperación de cartera y activos** (socio: Sergio López Aldama): diagnóstico y segmentación de cartera; cobranza domiciliaria, telefónica, judicial y extrajudicial; recuperación de activos, convenios y liquidaciones; tableros de KPIs. Cartera automotriz, hipotecaria, de tarjeta, de nómina y castigada.
+- **Business Intelligence y estrategia de datos** (socio: Sergio López O.): tableros ejecutivos en Power BI y Tableau, gobierno de datos, ingeniería de datos y calidad de la información, automatización de reportes y consolidación financiera.
+- **Modelos, machine learning e IA** (socio: Agustín Velázquez S.): modelos predictivos (XGBoost, redes neuronales) de propensión, rotación, siniestralidad, mora, riesgo de crédito y pronóstico de demanda; administración de riesgos; datamarts; puesta en producción y monitoreo.
+
+## Enfoque
+
+Diagnóstico (2–3 semanas), diseño (3–4 semanas), implementación (8–12 semanas) y acompañamiento mensual continuo.
+
+## Contacto
+
+- Sitio: https://www.datumnorte.com/
+- Correo: contacto@datumnorte.com
+- Teléfono / WhatsApp: +52 55 3782 7315
+- Horario: lunes a viernes, 9:00 a 19:00 (hora del centro de México)
