@@ -1,16 +1,34 @@
 # Datum Norte
 
-> Firma de consultoría en México (Naucalpan, Estado de México) especializada en recuperación de cartera y cobranza, Business Intelligence y estrategia de datos, y modelos de machine learning e inteligencia artificial para empresas e instituciones. Atiende toda la República Mexicana. La primera conversación de diagnóstico no tiene costo.
+> Firma de consultoría en México (Naucalpan, Estado de México) enfocada en datos y automatización: ingeniería y calidad de datos, automatización de procesos y reportes, Business Intelligence y modelos de machine learning e inteligencia artificial para empresas. Como complemento, ofrece recuperación de cartera. Atiende toda la República Mexicana. La primera llamada de 30 minutos no tiene costo.
+
+## Oferta principal: Diagnóstico Norte
+
+Diagnóstico de 30 días realizado personalmente por un socio, con los datos reales de la empresa:
+
+- Mapa de fugas cuantificado en pesos
+- Auditoría de calidad de datos y fuentes
+- Inventario de procesos automatizables, con horas y pesos ahorrados
+- Línea base de indicadores para la dirección
+- Prototipo de tablero ejecutivo funcionando
+- Plan de 90 días priorizado por retorno
+- Bonos: sesión de oportunidades con modelos predictivos, revisión express de cartera y capacitación de 2 horas para el equipo
+
+Garantía: si las oportunidades identificadas no valen al menos el doble de lo invertido, se devuelve el 100 % y el cliente conserva los entregables. El precio es fijo según el tamaño de la operación y se comunica en la primera llamada.
 
 ## Prácticas
 
-- **Recuperación de cartera y activos** (socio: Sergio López Aldama): diagnóstico y segmentación de cartera; cobranza domiciliaria, telefónica, judicial y extrajudicial; recuperación de activos, convenios y liquidaciones; tableros de KPIs. Cartera automotriz, hipotecaria, de tarjeta, de nómina y castigada.
-- **Business Intelligence y estrategia de datos** (socio: Sergio López O.): tableros ejecutivos en Power BI y Tableau, gobierno de datos, ingeniería de datos y calidad de la información, automatización de reportes y consolidación financiera.
-- **Modelos, machine learning e IA** (socio: Agustín Velázquez S.): modelos predictivos (XGBoost, redes neuronales) de propensión, rotación, siniestralidad, mora, riesgo de crédito y pronóstico de demanda; administración de riesgos; datamarts; puesta en producción y monitoreo.
+- **Datos y automatización** (socio: Sergio López O.): ingeniería de datos y calidad de la información; automatización de capturas, conciliaciones y cargas entre sistemas; reportes y consolidación financiera automáticos; tableros ejecutivos en Power BI y Tableau.
+- **Modelos, machine learning e IA** (socio: Agustín Velázquez S.): modelos predictivos (XGBoost, redes neuronales) de pronóstico de demanda, pedido sugerido por cliente, mora, abandono y siniestralidad; puesta en producción y monitoreo.
+- **Recuperación de cartera, como complemento** (socio: Sergio López Aldama): segmentación de cartera; cobranza domiciliaria, telefónica, judicial y extrajudicial; convenios y recuperación de activos; tableros de KPIs.
 
-## Enfoque
+## Para quién
 
-Diagnóstico (2–3 semanas), diseño (3–4 semanas), implementación (8–12 semanas) y acompañamiento mensual continuo.
+Empresas medianas y en crecimiento: distribuidoras y comercializadoras, despachos contables, productores como viñedos, bodegas y destilerías, grupos automotrices y financieras.
+
+## Proceso
+
+Llamada de 30 minutos sin costo; Diagnóstico Norte (30 días); implementación (8 a 12 semanas); acompañamiento mensual.
 
 ## Contacto
 
